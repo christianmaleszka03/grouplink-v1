@@ -11,12 +11,12 @@ import com.vaadin.flow.component.sidenav.SideNav;
 import com.vaadin.flow.component.sidenav.SideNavItem;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.theme.lumo.LumoUtility;
-import de.grouplink.grouplinkvaadin.views.dashboard.DashboardView;
-import de.grouplink.grouplinkvaadin.views.feed.FeedView;
-import de.grouplink.grouplinkvaadin.views.imagegallery.ImageGalleryView;
-import de.grouplink.grouplinkvaadin.views.masterdetail.MasterDetailView;
-import de.grouplink.grouplinkvaadin.views.register.RegisterView;
-import de.grouplink.grouplinkvaadin.views.vote.VoteView;
+import de.grouplink.grouplinkvaadin.views.defaults.dashboard.DashboardView;
+import de.grouplink.grouplinkvaadin.views.defaults.dashboard.feed.FeedView;
+import de.grouplink.grouplinkvaadin.views.defaults.dashboard.imagegallery.ImageGalleryView;
+import de.grouplink.grouplinkvaadin.views.defaults.dashboard.masterdetail.MasterDetailView;
+import de.grouplink.grouplinkvaadin.views.defaults.dashboard.register.RegisterView;
+import de.grouplink.grouplinkvaadin.views.defaults.dashboard.vote.VoteView;
 import org.vaadin.lineawesome.LineAwesomeIcon;
 
 /**

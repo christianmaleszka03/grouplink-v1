@@ -1,4 +1,4 @@
-package de.grouplink.grouplinkvaadin.views.feed;
+package de.grouplink.grouplinkvaadin.views.defaults.dashboard.feed;
 
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.grid.GridVariant;

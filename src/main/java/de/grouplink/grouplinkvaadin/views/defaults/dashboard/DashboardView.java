@@ -1,4 +1,4 @@
-package de.grouplink.grouplinkvaadin.views.dashboard;
+package de.grouplink.grouplinkvaadin.views.defaults.dashboard;
 
 import com.vaadin.flow.component.Composite;
 import com.vaadin.flow.component.button.Button;

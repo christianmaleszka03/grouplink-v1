@@ -1,4 +1,4 @@
-package de.grouplink.grouplinkvaadin.views.vote;
+package de.grouplink.grouplinkvaadin.views.defaults.dashboard.vote;
 
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.button.Button;

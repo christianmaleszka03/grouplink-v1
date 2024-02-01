@@ -1,4 +1,4 @@
-package de.grouplink.grouplinkvaadin.views.imagegallery;
+package de.grouplink.grouplinkvaadin.views.defaults.dashboard.imagegallery;
 
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Image;
