@@ -22,6 +22,10 @@ public class EventEntity extends DatedEntity {
     @NotBlank
     private String name;
 
+    @Column(name = "description", columnDefinition = "TEXT")
+    @NotNull
+    private String description = "";
+
     @Column(name = "start_timestamp", columnDefinition = "TIMESTAMP WITH TIME ZONE")
     @NotNull
     private ZonedDateTime startTimestamp;
@@ -34,5 +38,8 @@ public class EventEntity extends DatedEntity {
     private ApplicationUserEntity ownedByUser;
 
     @OneToMany(mappedBy = "belongsToEvent")
-    private List<GroupEntity> group = new ArrayList<>();
+    private List<GroupEntity> groups = new ArrayList<>();
+
+    @OneToMany(mappedBy = "belongsToEvent")
+    private List<VoteEntity> votes = new ArrayList<>();
 }

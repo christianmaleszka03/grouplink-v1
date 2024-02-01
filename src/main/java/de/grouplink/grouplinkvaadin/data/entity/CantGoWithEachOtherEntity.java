@@ -21,6 +21,7 @@ public class CantGoWithEachOtherEntity extends AbstractEntity {
     @NotBlank
     private String text;
 
-    @Column(name = "vote_pointed_to_id")
-    private Long votePointedToId;
+    @ManyToOne
+    @JoinColumn(name = "vote_pointed_to_id")
+    private VoteEntity votePointedTo;
 }

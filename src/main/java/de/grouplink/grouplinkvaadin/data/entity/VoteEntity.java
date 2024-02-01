@@ -9,7 +9,9 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Getter
@@ -38,6 +40,9 @@ public class VoteEntity extends DatedEntity {
     @ManyToOne
     @JoinColumn(name = "assigned_to_group_id")
     private GroupEntity assignedToGroup;
+
+    @OneToMany(mappedBy = "issuingVote")
+    private List<CantGoWithEachOtherEntity> cantGoWithEachOthers = new ArrayList<>();
 
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "vote_group_preferences", joinColumns = @JoinColumn(name = "vote_id"))
