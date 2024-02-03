@@ -1,0 +1,159 @@
+
+.custom-login-view {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F4F5F7;
+    border-radius: 10px;
+}
+
+.custom-login-form {
+    width: 360px !important;
+    background-color: #ffffff;
+    padding: 0;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+    border-radius: 10px;
+}
+.custom-login-form vaadin-text-field, .custom-login-form vaadin-button, .custom-login-form vaadin-password-field {
+    width: 90%;
+}
+
+.custom-login-form vaadin-text-field {
+    margin-top: 30px;
+}
+
+.custom-login-form vaadin-password-field {
+    margin-bottom: 25px;
+}
+
+.custom-login-form-img {
+    object-fit: contain;
+    height: 296px;
+    width: 296px;
+}
+
+.custom-login-form-header-container {
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-login-form .custom-login-form-title {
+    margin-bottom: 20px;
+    color: white;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+.custom-login-form-register-anchor {
+    color: black;
+    font-weight: normal;
+    text-align: center;
+    font-size: 1em;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.custom-login-form .custom-login-form-login-button {
+    background-color: #1875BA !important;
+    color: white !important;
+}
+
+.custom-login-form .custom-login-form-forgot-button {
+    color: black !important;
+}
+
+.custom-login-form-error-message {
+    font-size: 0.9em;
+    color: red;
+    text-align: center;
+    margin: 10px;
+}
+
+.custom-login-form-error-message-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin-bottom: 20px;
+    background-color: #FDEDEB;
+    border-radius: 10px;
+}
+
+.custom-login-form-content-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+/*@media screen and (max-width: 1200px) {
+    .custom-login-view {
+        padding: 0;
+        margin-bottom: 200px;
+    }
+
+    .custom-login-form {
+        width: 100% !important;
+        border-radius: 0px 0px 10px 10px;
+        min-height: 100vh;
+    }
+
+    .custom-login-form .custom-login-form-header-container {
+        display: none;
+        border-radius: 0px 0px 10px 10px;
+    }
+
+    .custom-login-form .custom-login-form-img {
+        height: 9rem;
+        width: 9rem;
+        margin: 2rem;
+    }
+
+    .custom-login-form-title {
+        display: none;
+    }
+}*/
+
+/*@media screen and (max-width: 1200px) and (orientation:landscape) {
+    .custom-login-form {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .custom-login-form-header-container {
+        height: 100vh;
+        border-radius: 0px 10px 10px 0px !important;
+    }
+
+    .custom-login-form-content-container {
+        margin-left: 24px;
+        display: flex;
+        flex-direction: column;
+        width: 140%;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .custom-login-form .custom-login-form-register-anchor {
+        margin-top: 0px;
+        margin-bottom: 30px;
+    }
+}*/
+
+vaadin-login-form vaadin-button[theme~="submit"] {
+    background-color: #1875BA !important;
+    color: white !important;
+}

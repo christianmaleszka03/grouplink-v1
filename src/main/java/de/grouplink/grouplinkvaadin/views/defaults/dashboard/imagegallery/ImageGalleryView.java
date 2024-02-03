@@ -21,10 +21,10 @@ import com.vaadin.flow.theme.lumo.LumoUtility.Margin;
 import com.vaadin.flow.theme.lumo.LumoUtility.MaxWidth;
 import com.vaadin.flow.theme.lumo.LumoUtility.Padding;
 import com.vaadin.flow.theme.lumo.LumoUtility.TextColor;
-import de.grouplink.grouplinkvaadin.views.MainLayout;
+import de.grouplink.grouplinkvaadin.views.AppLayout;
 
 @PageTitle("Image Gallery")
-@Route(value = "image-gallery", layout = MainLayout.class)
+@Route(value = "image-gallery", layout = AppLayout.class)
 public class ImageGalleryView extends Main implements HasComponents, HasStyle {
 
     private OrderedList imageContainer;

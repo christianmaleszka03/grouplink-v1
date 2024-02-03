@@ -18,3 +18,13 @@ vaadin-side-nav-item vaadin-icon {
 [slot="drawer"]:is(header, footer):is(:empty) {
   display: none;
 }
+
+.logout-button {
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.nav-bar-logo {
+  object-fit: fill;
+  width: 100%;
+}

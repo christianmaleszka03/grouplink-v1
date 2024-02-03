@@ -1,0 +1,12 @@
+.custom-register-view-container {
+    width: 80% !important;
+    max-width: 500px !important;
+}
+
+.custom-register-view-login-link {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #007bff;
+    text-decoration: none;
+    cursor: pointer;
+}

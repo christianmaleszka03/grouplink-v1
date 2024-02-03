@@ -13,12 +13,12 @@ import com.vaadin.flow.router.AfterNavigationEvent;
 import com.vaadin.flow.router.AfterNavigationObserver;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
-import de.grouplink.grouplinkvaadin.views.MainLayout;
+import de.grouplink.grouplinkvaadin.views.AppLayout;
 import java.util.Arrays;
 import java.util.List;
 
 @PageTitle("Feed")
-@Route(value = "feed", layout = MainLayout.class)
+@Route(value = "feed", layout = AppLayout.class)
 public class FeedView extends Div implements AfterNavigationObserver {
 
     Grid<Person> grid = new Grid<>();

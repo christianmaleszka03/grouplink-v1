@@ -1,6 +1,5 @@
 package de.grouplink.grouplinkvaadin.views;
 
-import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.html.Footer;
 import com.vaadin.flow.component.html.H1;
@@ -13,18 +12,19 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 import de.grouplink.grouplinkvaadin.views.defaults.dashboard.feed.FeedView;
 import de.grouplink.grouplinkvaadin.views.defaults.dashboard.imagegallery.ImageGalleryView;
-import de.grouplink.grouplinkvaadin.views.defaults.dashboard.register.RegisterView;
-import de.grouplink.grouplinkvaadin.views.defaults.dashboard.vote.VoteView;
+import de.grouplink.grouplinkvaadin.views.legal.AGBPageView;
+import de.grouplink.grouplinkvaadin.views.legal.ImpressumPageView;
+import de.grouplink.grouplinkvaadin.views.register.RegisterPageView;
 import org.vaadin.lineawesome.LineAwesomeIcon;
 
 /**
  * The main view is a top-level placeholder for other views.
  */
-public class MainLayout extends AppLayout {
+public class FakeAppLayout extends com.vaadin.flow.component.applayout.AppLayout {
 
     private H2 viewTitle;
 
-    public MainLayout() {
+    public FakeAppLayout() {
         setPrimarySection(Section.DRAWER);
         addDrawerContent();
         addHeaderContent();
@@ -38,6 +38,7 @@ public class MainLayout extends AppLayout {
         viewTitle.addClassNames(LumoUtility.FontSize.LARGE, LumoUtility.Margin.NONE);
 
         addToNavbar(true, toggle, viewTitle);
+
     }
 
     private void addDrawerContent() {
@@ -53,12 +54,13 @@ public class MainLayout extends AppLayout {
     private SideNav createNavigation() {
         SideNav nav = new SideNav();
 
-        nav.addItem(new SideNavItem("Vote", VoteView.class, LineAwesomeIcon.CREDIT_CARD.create()));
-        //nav.addItem(new SideNavItem("Dashboard", DashboardView.class, LineAwesomeIcon.PENCIL_RULER_SOLID.create()));
-        nav.addItem(new SideNavItem("Register", RegisterView.class, LineAwesomeIcon.USER.create()));
+        nav.addItem(new SideNavItem("Impressum", ImpressumPageView.class, LineAwesomeIcon.PENCIL_RULER_SOLID.create()));
+        nav.addItem(new SideNavItem("AGBs", AGBPageView.class, LineAwesomeIcon.PENCIL_RULER_SOLID.create()));
+
+        //nav.addItem(new SideNavItem("Register", RegisterPageView.class, LineAwesomeIcon.USER.create()));
         //nav.addItem(new SideNavItem("Master-Detail", MasterDetailView.class, LineAwesomeIcon.COLUMNS_SOLID.create()));
-        nav.addItem(new SideNavItem("Image Gallery", ImageGalleryView.class, LineAwesomeIcon.TH_LIST_SOLID.create()));
-        nav.addItem(new SideNavItem("Feed", FeedView.class, LineAwesomeIcon.LIST_SOLID.create()));
+        //nav.addItem(new SideNavItem("Image Gallery", ImageGalleryView.class, LineAwesomeIcon.TH_LIST_SOLID.create()));
+        //nav.addItem(new SideNavItem("Feed", FeedView.class, LineAwesomeIcon.LIST_SOLID.create()));
 
         return nav;
     }

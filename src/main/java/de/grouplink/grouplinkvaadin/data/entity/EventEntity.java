@@ -37,9 +37,9 @@ public class EventEntity extends DatedEntity {
     @JoinColumn(name = "owned_by_user_id")
     private ApplicationUserEntity ownedByUser;
 
-    @OneToMany(mappedBy = "belongsToEvent")
+    @OneToMany(mappedBy = "belongsToEvent", fetch = FetchType.EAGER)
     private List<GroupEntity> groups = new ArrayList<>();
 
-    @OneToMany(mappedBy = "belongsToEvent")
+    @OneToMany(mappedBy = "belongsToEvent", fetch = FetchType.EAGER)
     private List<VoteEntity> votes = new ArrayList<>();
 }
