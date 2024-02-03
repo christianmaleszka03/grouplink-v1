@@ -18,12 +18,12 @@
 //import com.vaadin.flow.router.Route;
 //import com.vaadin.flow.spring.data.VaadinSpringDataHelpers;
 //import com.vaadin.flow.theme.lumo.LumoUtility.Gap;
-//import de.grouplink.grouplinkvaadin.views.MainLayout;
+//import de.grouplink.grouplinkvaadin.views.AppLayout;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.data.domain.PageRequest;
 //
 //@PageTitle("Dashboard")
-//@Route(value = "dashboard", layout = MainLayout.class)
+//@Route(value = "dashboard", layout = AppLayout.class)
 //@Uses(Icon.class)
 //public class DashboardView extends Composite<VerticalLayout> {
 //

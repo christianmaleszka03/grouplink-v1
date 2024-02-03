@@ -13,6 +13,7 @@ import org.springframework.validation.annotation.Validated;
 import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Validated
 @Service
@@ -64,5 +65,27 @@ public class OrganizerHighlevelService {
         List<EventDTO> events = eventLowLevelService.getAllForOwningUser(currentUser.getId());
         log.info("Got {} events for user with id: {}", events.size(), currentUser.getId());
         return events;
+    }
+
+    public Optional<EventDTO> getEventByIdForCurrentUser(@NotNull UUID eventId) {
+        Optional<ApplicationUserDTO> currentUserOptional = authenticatedUserHelper.get();
+        if (currentUserOptional.isEmpty()) {
+            throw new IllegalStateException("No user authenticated.");
+        }
+        ApplicationUserDTO currentUser = currentUserOptional.get();
+
+        log.info("Trying to get event with id: {} for user with id: {}", eventId, currentUser.getId());
+        Optional<EventDTO> eventOptional = eventLowLevelService.getById(eventId);
+        if (eventOptional.isEmpty()) {
+            log.info("No event with id: {} found for user with id: {}", eventId, currentUser.getId());
+        } else {
+            if(eventOptional.get().getOwnedByUserID().equals(currentUser.getId())) {
+                log.info("Event with id: {} found for user with id: {}", eventId, currentUser.getId());
+            } else {
+                log.info("Event with id: {} found for user with id: {} but it is not owned by the user", eventId, currentUser.getId());
+                return Optional.empty();
+            }
+        }
+        return eventOptional;
     }
 }

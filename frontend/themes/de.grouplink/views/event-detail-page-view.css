@@ -1,0 +1,10 @@
+.event-details-header-heading {
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.event-detail-page-view {
+    align-items: center !important;
+    width: 100%;
+    flex-grow: 1;
+}

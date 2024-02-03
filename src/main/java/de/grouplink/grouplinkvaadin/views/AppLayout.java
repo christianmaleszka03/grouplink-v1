@@ -4,6 +4,8 @@ import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.html.*;
+import com.vaadin.flow.component.icon.Icon;
+import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.Scroller;
 import com.vaadin.flow.component.sidenav.SideNav;
 import com.vaadin.flow.component.sidenav.SideNavItem;
@@ -13,6 +15,7 @@ import com.vaadin.flow.theme.lumo.LumoUtility;
 import de.grouplink.grouplinkvaadin.service.highlevel.AuthenticationHighLevelService;
 import de.grouplink.grouplinkvaadin.views.defaults.dashboard.feed.FeedView;
 import de.grouplink.grouplinkvaadin.views.defaults.dashboard.imagegallery.ImageGalleryView;
+import de.grouplink.grouplinkvaadin.views.login.DefaultLoginView;
 import de.grouplink.grouplinkvaadin.views.myevents.MyEventsPageView;
 import de.grouplink.grouplinkvaadin.views.register.RegisterPageView;
 import org.vaadin.lineawesome.LineAwesomeIcon;
@@ -69,7 +72,8 @@ public class AppLayout extends com.vaadin.flow.component.applayout.AppLayout {
         //nav.addItem(new SideNavItem("Master-Detail", MasterDetailView.class, LineAwesomeIcon.COLUMNS_SOLID.create()));
         //nav.addItem(new SideNavItem("Image Gallery", ImageGalleryView.class, LineAwesomeIcon.TH_LIST_SOLID.create()));
         //nav.addItem(new SideNavItem("Feed", FeedView.class, LineAwesomeIcon.LIST_SOLID.create()));
-        nav.addItem(new SideNavItem("Meine Events", MyEventsPageView.class, LineAwesomeIcon.TICKET_ALT_SOLID.create()));
+        nav.addItem(new SideNavItem("Meine Events", MyEventsPageView.class, new Icon(VaadinIcon.CALENDAR)));
+        nav.addItem(new SideNavItem("Mein Profil", DefaultLoginView.class, new Icon(VaadinIcon.COG_O)));
 
         return nav;
     }
