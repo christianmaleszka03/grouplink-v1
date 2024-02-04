@@ -88,4 +88,7 @@ public class OrganizerHighlevelService {
         }
         return eventOptional;
     }
+
+    // GROUP SECTION
+
 }

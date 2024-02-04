@@ -16,6 +16,7 @@ import com.vaadin.flow.theme.lumo.LumoUtility;
 import de.grouplink.grouplinkvaadin.data.dto.EventDTO;
 import de.grouplink.grouplinkvaadin.data.dto.VoteDTO;
 import de.grouplink.grouplinkvaadin.service.highlevel.OrganizerHighlevelService;
+import de.grouplink.grouplinkvaadin.sharedcomponents.grouplisteditor.GroupListEditorView;
 import de.grouplink.grouplinkvaadin.views.AppLayout;
 import de.grouplink.grouplinkvaadin.views.CreateNewEventPageView;
 import de.grouplink.grouplinkvaadin.views.myevents.components.EventCard;
@@ -149,13 +150,13 @@ public class EventDetailPageView extends Composite<VerticalLayout> implements Ha
 
     private void constructGroupSection() {
         VerticalLayout groupContainerVL = new VerticalLayout();
-        OrderedList groupContainerOL = new OrderedList();
+
         addClassNames("image-gallery-view");
         addClassNames(LumoUtility.MaxWidth.SCREEN_LARGE, LumoUtility.Margin.Horizontal.AUTO, LumoUtility.Padding.Bottom.LARGE, LumoUtility.Padding.Horizontal.LARGE);
 
-        HorizontalLayout container = new HorizontalLayout();
-        container.addClassNames(LumoUtility.AlignItems.CENTER, LumoUtility.JustifyContent.START);
-        container.setWidthFull();
+        HorizontalLayout headerContainer = new HorizontalLayout();
+        headerContainer.addClassNames(LumoUtility.AlignItems.CENTER, LumoUtility.JustifyContent.START);
+        headerContainer.setWidthFull();
 
         H2 heading = new H2("Verfügbare Gruppen");
 
@@ -163,25 +164,11 @@ public class EventDetailPageView extends Composite<VerticalLayout> implements Ha
         createEventButton.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
         createEventButton.addClickListener(event -> UI.getCurrent().navigate(CreateNewEventPageView.class));
 
-        groupContainerOL = new OrderedList();
-        groupContainerOL.getStyle().set("width", "60%");
-        groupContainerOL.addClassNames(LumoUtility.Gap.MEDIUM, LumoUtility.Display.GRID, LumoUtility.ListStyleType.NONE, LumoUtility.Margin.NONE, LumoUtility.Padding.NONE);
+        GroupListEditorView groupListEditorView = new GroupListEditorView(event.getGroups());
 
-        container.add(heading, createEventButton);
-        groupContainerVL.add(container, groupContainerOL);
+        headerContainer.add(heading, createEventButton);
+        groupContainerVL.add(headerContainer, groupListEditorView);
         groupContainerVL.setWidthFull();
-
-        groupContainerOL.add(new EventCard(event));
-        groupContainerOL.add(new EventCard(event));
-        groupContainerOL.add(new EventCard(event));
-        groupContainerOL.add(new EventCard(event));
-        groupContainerOL.add(new EventCard(event));
-        groupContainerOL.add(new EventCard(event));
-        groupContainerOL.add(new EventCard(event));
-        groupContainerOL.add(new EventCard(event));
-        groupContainerOL.add(new EventCard(event));
-        groupContainerOL.add(new EventCard(event));
-        groupContainerOL.add(new EventCard(event));
 
 
         getContent().add(groupContainerVL);
